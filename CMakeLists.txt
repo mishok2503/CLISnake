@@ -7,4 +7,6 @@ project(Snake)
 
 string(APPEND CMAKE_CXX_FLAGS " -Wall -Werror")
 
-add_executable(main main.cpp)
+add_executable(main src/main.cpp src/Snake.cpp)
+
+target_include_directories(main PUBLIC include src)
