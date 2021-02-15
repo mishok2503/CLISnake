@@ -1,22 +1,12 @@
-#include <iostream>
-#include <conio.h>
- 
-using namespace std;
+#include "Snake.h"
  
 int main()
 {
- 	while (true)
-	{
-		std::cout << "123" << std::
-     struct termios oldt,
-     newt;
-     int ch;
-     tcgetattr( STDIN_FILENO, &oldt );
-     newt = oldt;
-     newt.c_lflag &= ~( ICANON | ECHO );
-     tcsetattr( STDIN_FILENO, TCSANOW, &newt );
-     ch = getchar();
-     tcsetattr( STDIN_FILENO, TCSANOW, &oldt );
-     cout<<ch;
- }
+	Snake snake(20, 20);
+    while(snake.is_alive())
+    {
+        snake.draw();
+        snake.move();
+        snake.get_key();
+    }
 }
